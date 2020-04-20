@@ -27,9 +27,12 @@ Input Output tables
 - [x] @balance initializes at 0
 - [x] .deposit(1000) --> @balance == 1000
 - [x] .deposit(2000) --> @balance == 3000
-- [ ] .withdraw(500) --> @balance == 2500
+- [x] .withdraw(500) --> @balance == 2500
 
 <ins>Transaction:</ins>
+- [ ] .initialize amount with 100 --> transaction.amount == 100
+- [ ] .initialize date with '10-01-2020' --> transaction.date == '10-01-2020'
+- [ ] .initialise type with 'credit' --> transaction.type == 'credit'
 - [ ] transaction.create(1, 10-01-2020, 'credit') --> .credit? == true
 - [ ] transaction.create(1, 10-01-2020, 'debit') --> .credit? == false
 
