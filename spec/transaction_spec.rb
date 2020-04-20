@@ -13,6 +13,10 @@ describe Transaction do
       expect(transaction.type).to eq 'credit'
     end
 
+    it 'date is "10-01-2020"' do
+      expect(transaction.date).to eq '10-01-2020'
+    end
+
   end
 
 end
