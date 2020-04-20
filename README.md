@@ -24,9 +24,9 @@ Describe here how I approached designing my solution and I structured my code. W
 Input Output tables
 
 <ins>Bank:</ins>
-- [ ] @balance initializes at 0
-- [ ] .deposit(1000) --> @balance == 1000
-- [ ] .deposit(2000) --> @balance == 3000
+- [x] @balance initializes at 0
+- [x] .deposit(1000) --> @balance == 1000
+- [x] .deposit(2000) --> @balance == 3000
 - [ ] .withdraw(500) --> @balance == 2500
 
 <ins>Transaction:</ins>
