@@ -2,11 +2,12 @@ require 'transaction'
 
 describe Transaction do
 
+  subject(:transaction) { described_class.new(1000, 'credit', '10-01-2020') }
+
   context 'credit transactions' do
-    subject(:transaction) { described_class.new(100, 'credit', '10-01-2020') }
 
     it 'have amount of 100' do
-      expect(transaction.amount).to eq 100
+      expect(transaction.amount).to eq 1000
     end
 
     it 'type is "credit"' do
@@ -17,8 +18,17 @@ describe Transaction do
       expect(transaction.date).to eq '10-01-2020'
     end
 
-    it '.credit? return true' do
+    it '.credit? returns true' do
       expect(transaction.credit?).to be true
+    end
+
+  end
+
+  context 'debit transactions' do
+    subject(:transaction) { described_class.new(500, 'debit', '10-01-2020') }
+
+    it '.credit? returns false' do
+      expect(transaction.credit?).to be false
     end
 
   end
