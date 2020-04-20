@@ -9,10 +9,14 @@ describe Statement do
 
   subject(:statement) { described_class.new transactions }
 
-  describe '.print' do
+  describe '.generate' do
+
+    it 'displays column headers in correct format' do
+      expect(statement.rows[0]).to eq "date || credit || debit || balance"
+    end
 
     it 'displays credit transaction in correct format' do
-      expect(statement.print).to include "10/01/2020 || 1000.00 || || 1000.00"
+      expect(statement.rows[1]).to eq "10/01/2020 || 1000.00 || || 1000.00"
     end
 
   end
