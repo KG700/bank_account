@@ -30,14 +30,15 @@ Input Output tables
 - [x] .withdraw(500) --> @balance == 2500
 - [x] @transactions initializes as empty array
 - [x] .deposit(100) --> adds a transaction to transactions array
-- [ ] .withdraw(100) --> adds a transaction to transactions array
+- [x] .withdraw(100) --> adds a transaction to transactions array
 
 <ins>Transaction:</ins>
-- [x] .initialize amount with 100 --> transaction.amount == 100
+- [x] when .initialize amount with 100 --> transaction.amount == 100
 - [x] .initialise type with 'credit' --> transaction.type == 'credit'
 - [x] .initialize date with '10-01-2020' --> transaction.date == '10-01-2020'
 - [x] when transaction.type == 'credit' --> .credit? == true
 - [x] when transaction.type == 'debit' --> .credit? == false
+- [ ] .initalize balance with 1000 --> transaction.balance == 1000
 
 **Installation**
 Describe here how to install and run my code and tests
