@@ -9,6 +9,10 @@ describe Transaction do
       expect(transaction.amount).to eq 100
     end
 
+    it 'type is "credit"' do
+      expect(transaction.type).to eq 'credit'
+    end
+
   end
 
 end
