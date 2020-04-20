@@ -9,6 +9,7 @@ class Account
 
   def deposit(money)
     update_balance money
+    @transactions.push(Transaction.new(money, 'credit', Time.now))
   end
 
   def withdraw(money)

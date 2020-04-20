@@ -23,12 +23,14 @@ Describe here how I approached designing my solution and I structured my code. W
 **Testing** :
 Input Output tables
 
-<ins>Bank:</ins>
+<ins>Account:</ins>
 - [x] @balance initializes at 0
 - [x] .deposit(1000) --> @balance == 1000
 - [x] .deposit(2000) --> @balance == 3000
 - [x] .withdraw(500) --> @balance == 2500
-- [ ] @transactions initializes as empty array
+- [x] @transactions initializes as empty array
+- [ ] .deposit(100) --> adds a transaction to transactions array
+- [ ] .withdraw(100) --> adds a transaction to transactions array
 
 <ins>Transaction:</ins>
 - [x] .initialize amount with 100 --> transaction.amount == 100
