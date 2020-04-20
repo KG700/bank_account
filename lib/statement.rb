@@ -2,14 +2,30 @@ class Statement
 
   attr_reader :rows
 
-
+  HEADER = "date || credit || debit || balance"
 
   def initialize(transactions)
-    @rows = generate
+    @rows = generate(transactions)
   end
 
-  def generate
-    ["date || credit || debit || balance", "10/01/2020 || 1000.00 || || 1000.00"]
+  def generate(transactions)
+    transactions.map! do |transaction|
+      create_row(transaction)
+    end
+    transactions.unshift(HEADER)
+  end
+
+  private
+
+  def two_decimals(number)
+    '%.2f' % number
+  end
+
+  def create_row(transaction)
+    amount_column = transaction.credit? ? 1 : 2
+    row = transaction.date,'','',two_decimals(transaction.balance)
+    row[amount_column] = two_decimals(transaction.amount)
+    row.join(' || ').squeeze(' ')
   end
 
 end
