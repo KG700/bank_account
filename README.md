@@ -18,6 +18,8 @@ date || credit || debit || balance
 **Application Design**
 Describe here how I approached designing my solution and I structured my code. Why did I do it this way?
 
+![Bank Diagram](/images/bank_diagram.png)
+
 **Installation**
 Describe here how to install and run my code and tests
 
