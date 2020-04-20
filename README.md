@@ -31,6 +31,7 @@ Input Output tables
 - [x] @transactions initializes as empty array
 - [x] .deposit(100) --> adds a transaction to transactions array
 - [x] .withdraw(100) --> adds a transaction to transactions array
+- [x] .print_statement prints statement in correct format
 
 <ins>Transaction:</ins>
 - [x] when .initialize amount with 100 --> transaction.amount == 100
@@ -38,7 +39,13 @@ Input Output tables
 - [x] .initialize date with '10-01-2020' --> transaction.date == '10-01-2020'
 - [x] when transaction.type == 'credit' --> .credit? == true
 - [x] when transaction.type == 'debit' --> .credit? == false
-- [ ] .initalize balance with 1000 --> transaction.balance == 1000
+- [x] .initalize balance with 1000 --> transaction.balance == 1000
+
+<ins>Statement</ins>
+- [ ] .print out column headers --> date || credit || debit || balance
+- [x] .print out credit transaction in format --> "10/01/2020 || 1000.00 || || 1000.00"
+- [x] .print out debit transaction in format --> "14/01/2012 || || 500.00 || 2500.00"
+
 
 **Installation**
 Describe here how to install and run my code and tests
