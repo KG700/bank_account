@@ -42,4 +42,13 @@ describe Account do
     end
   end
 
+  describe '.print_statement' do
+
+    it 'calls the print method in the statement class' do
+      expect_any_instance_of(Statement).to receive(:print)
+      account.print_statement
+    end
+
+  end
+
 end

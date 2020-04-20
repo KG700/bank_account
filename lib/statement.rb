@@ -9,14 +9,10 @@ class Statement
   end
 
   def generate(transactions)
-    transactions.map! do |transaction|
-      create_row(transaction)
-    end
-    # transactions.unshift(HEADER)
+    transactions.map! { |transaction| create_row(transaction) }
   end
 
   def print
-    # puts HEADER
     @rows.each { |row| puts row }
   end
 
