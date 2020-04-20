@@ -25,9 +25,9 @@ Input Output tables
 
 <ins>Bank:</ins>
 - [ ] @balance initializes at 0
-- [ ] .deposit(1000, 10-01-2020) --> @balance == 1000
-- [ ] .deposit(2000, 13-01-2020) --> @balance == 3000
-- [ ] .withdraw(500, 14-01-2020) --> @balance == 2500
+- [ ] .deposit(1000) --> @balance == 1000
+- [ ] .deposit(2000) --> @balance == 3000
+- [ ] .withdraw(500) --> @balance == 2500
 
 <ins>Transaction:</ins>
 - [ ] transaction.create(1, 10-01-2020, 'credit') --> .credit? == true
