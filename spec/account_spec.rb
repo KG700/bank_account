@@ -21,7 +21,7 @@ describe Account do
       account.deposit(1000)
       expect { account.deposit(2000) }.to change{ account.balance }.from(1000).to 3000
     end
-    it 'adds a transaction the transactions array' do
+    it 'adds a transaction to the transactions array' do
       account.deposit(1000)
       expect(account.transactions.last).to be_a Transaction
     end
@@ -35,6 +35,10 @@ describe Account do
 
     it 'decreases the balance by 500 when 500 is withdrawn' do
       expect { account.withdraw(500) }.to change{ account.balance }.from(3000).to 2500
+    end
+    it 'adds a transaction to the transactions array' do
+      account.withdraw(1000)
+      expect(account.transactions.last).to be_a Transaction
     end
   end
 

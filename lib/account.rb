@@ -14,6 +14,7 @@ class Account
 
   def withdraw(money)
     update_balance -money
+    @transactions.push(Transaction.new(money, 'debit', Time.now))
   end
 
   private
