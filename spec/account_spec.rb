@@ -20,4 +20,15 @@ describe Account do
     end
   end
 
+  describe '.withdraw' do
+
+    before(:each) do
+      account.instance_variable_set(:@balance, 3000)
+    end
+
+    it 'decreases the balance by 500 when 500 is withdrawn' do
+      expect { account.withdraw(500) }.to change{ account.balance }.from(3000).to 2500
+    end
+  end
+
 end
