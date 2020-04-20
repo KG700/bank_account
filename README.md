@@ -31,10 +31,10 @@ Input Output tables
 
 <ins>Transaction:</ins>
 - [x] .initialize amount with 100 --> transaction.amount == 100
-- [ ] .initialise type with 'credit' --> transaction.type == 'credit'
-- [ ] .initialize date with '10-01-2020' --> transaction.date == '10-01-2020'
-- [ ] transaction.create(1, 10-01-2020, 'credit') --> .credit? == true
-- [ ] transaction.create(1, 10-01-2020, 'debit') --> .credit? == false
+- [x] .initialise type with 'credit' --> transaction.type == 'credit'
+- [x] .initialize date with '10-01-2020' --> transaction.date == '10-01-2020'
+- [ ] when transaction.type == 'credit' --> .credit? == true
+- [ ] when transaction.type == 'debit' --> .credit? == false
 
 **Installation**
 Describe here how to install and run my code and tests

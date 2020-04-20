@@ -17,6 +17,10 @@ describe Transaction do
       expect(transaction.date).to eq '10-01-2020'
     end
 
+    it '.credit? return true' do
+      expect(transaction.credit?).to be true
+    end
+
   end
 
 end

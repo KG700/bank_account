@@ -7,5 +7,9 @@ class Transaction
     @type = type
     @date = date
   end
+  
+  def credit?
+    @type == 'credit'
+  end
 
 end
