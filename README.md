@@ -28,6 +28,7 @@ Input Output tables
 - [x] .deposit(1000) --> @balance == 1000
 - [x] .deposit(2000) --> @balance == 3000
 - [x] .withdraw(500) --> @balance == 2500
+- [ ] @transactions initializes as empty array
 
 <ins>Transaction:</ins>
 - [x] .initialize amount with 100 --> transaction.amount == 100

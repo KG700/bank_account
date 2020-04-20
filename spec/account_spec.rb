@@ -8,6 +8,9 @@ describe Account do
     it 'with a balance of zero' do
       expect(account.balance).to eq 0
     end
+    it 'with an empty array of transactions' do
+      expect(account.transactions).to eq []
+    end
   end
 
   describe '.deposit' do
