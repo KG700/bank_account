@@ -20,6 +20,19 @@ Describe here how I approached designing my solution and I structured my code. W
 
 ![Bank Diagram](/images/bank_diagram.png)
 
+**Testing** :
+Input Output tables
+
+<ins>Bank:</ins>
+- [ ] @balance initializes at 0
+- [ ] .deposit(1000, 10-01-2020) --> @balance == 1000
+- [ ] .deposit(2000, 13-01-2020) --> @balance == 3000
+- [ ] .withdraw(500, 14-01-2020) --> @balance == 2500
+
+<ins>Transaction:</ins>
+- [ ] transaction.create(1, 10-01-2020, 'credit') --> .credit? == true
+- [ ] transaction.create(1, 10-01-2020, 'debit') --> .credit? == false
+
 **Installation**
 Describe here how to install and run my code and tests
 
