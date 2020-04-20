@@ -20,6 +20,10 @@ class Account
     new_transaction money, 'debit'
   end
 
+  def print_statement
+    Statement.new(@transactions).print
+  end
+
   private
 
   def update_balance money

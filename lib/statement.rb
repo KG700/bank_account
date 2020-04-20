@@ -12,7 +12,12 @@ class Statement
     transactions.map! do |transaction|
       create_row(transaction)
     end
-    transactions.unshift(HEADER)
+    # transactions.unshift(HEADER)
+  end
+
+  def print
+    # puts HEADER
+    @rows.each { |row| puts row }
   end
 
   private

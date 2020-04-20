@@ -15,16 +15,32 @@ describe Statement do
   describe '.generate' do
 
 
-    it 'displays column headers in correct format' do
-      expect(statement.rows[0]).to eq "date || credit || debit || balance"
-    end
+    # it 'displays column headers in correct format' do
+    #   expect(statement.rows[0]).to eq "date || credit || debit || balance"
+    # end
 
     it 'displays credit transaction in correct format' do
-      expect(statement.rows[1]).to eq "10/01/2020 || 1000.00 || || 1000.00"
+      expect(statement.rows[0]).to eq "10/01/2020 || 1000.00 || || 1000.00"
     end
 
     it 'displays debit transaction in correct format' do
-      expect(statement.rows[2]).to eq "12/01/2020 || || 300.00 || 700.00"
+      expect(statement.rows[1]).to eq "12/01/2020 || || 300.00 || 700.00"
+    end
+
+  end
+
+  describe '.print' do
+
+    it 'will output statement to console' do
+      expect { statement.print }.to output(/date || credit || debit || balance/).to_stdout
+    end
+
+    it 'will output statement to console' do
+      expect { statement.print }.to output(/10\/01\/2020 || 1000.00 || || 1000.00/).to_stdout
+    end
+
+    it 'will output statement to console' do
+      expect { statement.print }.to output(/12\/01\/2020 || || 300.00 || 700.00/).to_stdout
     end
 
   end
