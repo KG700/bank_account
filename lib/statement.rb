@@ -9,7 +9,7 @@ class Statement
   end
 
   def generate(transactions)
-    transactions.map! { |transaction| create_row(transaction) }
+    transactions.map! { |transaction| create_row(transaction) }.reverse
   end
 
   def print
