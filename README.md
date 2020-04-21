@@ -9,7 +9,7 @@ Steps for using application:
 
 1. Open up IRB in your terminal
 ```
-irb
+irb -r ./lib/account.rb
 ```
 
 2. Create a new account
@@ -58,6 +58,7 @@ Input Output tables
 - [x] .deposit(100) --> adds a transaction to transactions array
 - [x] .withdraw(100) --> adds a transaction to transactions array
 - [x] .print_statement prints statement in correct format
+- [ ] .print_statement raises error if transactions is empty
 
 <ins>Transaction:</ins>
 - [x] when .initialize amount with 100 --> transaction.amount == 100

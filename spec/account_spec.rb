@@ -44,9 +44,19 @@ describe Account do
 
   describe '.print_statement' do
 
+    let(:today) { Time.now }
+    let(:transaction) { double :transaction, amount: 1000, type: 'credit', date: today, balance: 1000 }
+
     it 'calls the print method in the statement class' do
+      account.instance_variable_set(:@transactions, [transaction])
+      allow(transaction).to receive(:credit?) { true }
+
       expect_any_instance_of(Statement).to receive(:print)
       account.print_statement
+    end
+
+    it 'raises error when there are no transactions' do
+      expect { account.print_statement }.to raise_error "You have no transactions. Statement cannot be generated"
     end
 
   end

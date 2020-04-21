@@ -21,6 +21,7 @@ class Account
   end
 
   def print_statement
+    raise "You have no transactions. Statement cannot be generated" if @transactions.empty?
     Statement.new(@transactions).print
   end
 
