@@ -57,7 +57,7 @@ Input Output tables
 - [x] @transactions initializes as empty array
 - [x] .deposit(100) --> adds a transaction to transactions array
 - [x] .withdraw(100) --> adds a transaction to transactions array
-- [ ] .print_statement prints statement in correct format
+- [x] .print_statement prints statement in correct format
 
 <ins>Transaction:</ins>
 - [x] when .initialize amount with 100 --> transaction.amount == 100
