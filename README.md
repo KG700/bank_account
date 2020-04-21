@@ -72,7 +72,8 @@ Input Output tables
 - [x] .print out column headers --> date || credit || debit || balance
 - [x] .print out credit transaction in format --> "10/01/2020 || 1000.00 || || 1000.00"
 - [x] .print out debit transaction in format --> "14/01/2012 || || 500.00 || 2500.00"
-- [ ] change '10-01-2020' --> '10/01/2020'
+- [x] change '10-01-2020' --> '10/01/2020'
+- [ ] print in reverse chronological order
 
 **Future Improvements**
 List here future developments I would make to this application with more time.

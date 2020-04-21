@@ -51,15 +51,15 @@ describe Statement do
     subject(:statement) { described_class.new transactions }
 
     it 'will output statement to console' do
-      expect { statement.print }.to output(/date || credit || debit || balance/).to_stdout
+      expect { statement.print }.to output(/date \|\| credit \|\| debit \|\| balance/).to_stdout
     end
 
     it 'will output statement to console' do
-      expect { statement.print }.to output(/ || 1000.00 || || 1000.00/).to_stdout
+      expect { statement.print }.to output(/ \|\| 1000.00 \|\| \|\| 1000.00/).to_stdout
     end
 
     it 'will output statement to console' do
-      expect { statement.print }.to output(/ || || 300.00 || 700.00/).to_stdout
+      expect { statement.print }.to output(/ \|\| \|\| 300.00 \|\| 700.00/).to_stdout
     end
 
   end

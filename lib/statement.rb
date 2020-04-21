@@ -13,6 +13,7 @@ class Statement
   end
 
   def print
+    puts HEADER
     @rows.each { |row| puts row }
   end
 
