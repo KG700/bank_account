@@ -58,7 +58,7 @@ Input Output tables
 - [x] .deposit(100) --> adds a transaction to transactions array
 - [x] .withdraw(100) --> adds a transaction to transactions array
 - [x] .print_statement prints statement in correct format
-- [ ] .print_statement raises error if transactions is empty
+- [x] .print_statement raises error if transactions is empty
 
 <ins>Transaction:</ins>
 - [x] when .initialize amount with 100 --> transaction.amount == 100
