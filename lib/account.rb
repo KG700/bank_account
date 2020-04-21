@@ -16,12 +16,13 @@ class Account
   end
 
   def withdraw(money)
-    update_balance -money
+    update_balance(-money)
     new_transaction money, 'debit'
   end
 
   def print_statement
     raise "You have no transactions. Statement cannot be generated" if @transactions.empty?
+    
     Statement.new(@transactions).print
   end
 

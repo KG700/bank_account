@@ -2,7 +2,7 @@ require 'statement'
 
 describe Statement do
 
-  let(:yesterday) { Time.now - 86400 }
+  let(:yesterday) { Time.now - 86_400 }
   let(:today) { Time.now }
 
   let(:credit_transaction) { double :transaction, amount: 1000, type: 'credit', date: yesterday, balance: 1000 }
