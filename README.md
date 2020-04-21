@@ -1,30 +1,29 @@
 Bank Application
 ---
 
-**Specifications**
-This is an application that simulates a bank. It allows you to start a new account. Deposit money into your account, and withdraw
-money from your account. You can also print an account statement.
+### Specifications
+This application simulates banking behaviour. It allows you to start a new account, deposit money into your account, and withdraw money from your account. You can also print an account statement to view all of your transactions in a table.
 
-Steps for using application:
-
-1. Open up IRB in your terminal
+##### Quick Start: Set up and start using this application:
+1. Fork and clone this repository
+2. Open up IRB in your terminal
 ```
 irb -r ./lib/account.rb
 ```
 
-2. Create a new account
+3. Create a new account
 ```
 account = Account.new
 ```
-3. Deposit some money
+4. Deposit some money
 ```
 account.deposit(3000)
 ```
-4. Withdraw some money
+5. Withdraw some money
 ```
 account.withdraw(500)
 ```
-5. Print an account Statement
+6. Print an account Statement
 ```
 account.print_statement
 ```
@@ -32,48 +31,42 @@ account.print_statement
 Account statement will print in your console in this format:
 ```
 date || credit || debit || balance
-20/04/2020 || 2000.00 || || 3000.00
 20/04/2020 || || 500.00 || 2500.00
+20/04/2020 || 2000.00 || || 3000.00
 ```
 
-To run my tests, just type rspec into your terminal
+To run the unit tests, just type into your terminal:
 ```
 rspec
 ```
 
-**Application Design**
-Describe here how I approached designing my solution and I structured my code. Why did I do it this way?
+### Application Design
+I designed this application to have 3 classes, each with a single responsibility:
+- **Account** is the main class that the user interacts with. It is responsible for creating and storing transactions and calculating the account balance.
+- **Transaction** is responsible for storing the key information about each transaction. It stores the date of the transaction, the amount, whether the transaction is a credit or debit and the balance at the point of the transaction.
+- **Statement** is responsible for generating and displaying all the transaction details in a format for the user to digest.
 
 ![Bank diagram](/images/bank_diagram.png?)
 
-**Testing** :
-Input Output tables
+### Testing
+The application was developed using TDD, resulting in an application with 100% test coverage according to SimpleCov. The Input Output table below was used to plan out each step of the TDD process.
 
-<ins>Account:</ins>
-- [x] @balance initializes at 0
-- [x] .deposit(1000) --> @balance == 1000
-- [x] .deposit(2000) --> @balance == 3000
-- [x] .withdraw(500) --> @balance == 2500
-- [x] @transactions initializes as empty array
-- [x] .deposit(100) --> adds a transaction to transactions array
-- [x] .withdraw(100) --> adds a transaction to transactions array
-- [x] .print_statement prints statement in correct format
-- [x] .print_statement raises error if transactions is empty
-
-<ins>Transaction:</ins>
-- [x] when .initialize amount with 100 --> transaction.amount == 100
-- [x] .initialise type with 'credit' --> transaction.type == 'credit'
-- [x] .initialize date with '10-01-2020' --> transaction.date == '10-01-2020'
-- [x] when transaction.type == 'credit' --> .credit? == true
-- [x] when transaction.type == 'debit' --> .credit? == false
-- [x] .initalize balance with 1000 --> transaction.balance == 1000
-
-<ins>Statement</ins>
-- [x] .print out column headers --> date || credit || debit || balance
-- [x] .print out credit transaction in format --> "10/01/2020 || 1000.00 || || 1000.00"
-- [x] .print out debit transaction in format --> "14/01/2012 || || 500.00 || 2500.00"
-- [x] change '10-01-2020' --> '10/01/2020'
-- [ ] print in reverse chronological order
-
-**Future Improvements**
-List here future developments I would make to this application with more time.
+| Done              | Class       | Input                                   | Output                |
+| :---:             | ---         | ---                                     | :---:                 |
+| :white_check_mark:| Account     | .initializes @balance                   | 0                     |
+| :white_check_mark:| Account     |  .deposit(1000)                         | @balance == 1000      |
+| :white_check_mark:| Account     |  @balance == 1000 : .deposit(2000)      | @balance == 3000      |
+| :white_check_mark:| Account     |  @balance == 3000 : .withdraw(500)      | @balance == 2500      |
+| :white_check_mark:| Account     |  .initializes @transactions             | []                    |
+| :white_check_mark:| Account     |  .deposit(100)                          |[Transaction.new]      |
+| :white_check_mark:| Account     |  .withdraw(100)                         |[Transaction.new]      |
+| :white_check_mark:| Account     |  .withdraw(100)                         |[Transaction.new]      |
+| :white_check_mark:| Account     |  .print_statement with transactions     |prints correctly       |
+| :white_check_mark:| Account     |  .print_statement without transactions  |raises error           |
+| :white_check_mark:| Transaction | when @type == 'credit'                  | .credit? == true      |
+| :white_check_mark:| Transaction | when @type == 'debit'                   | .credit? == false     |
+| :white_check_mark:| Statement   | .print prints column headers            | headers printed       |
+| :white_check_mark:| Statement   | .print prints credit transaction        | credit in 2nd column  |
+| :white_check_mark:| Statement   | .print prints debit transaction         | debit in 3rd column   |
+| :white_check_mark:| Statement   | .print date in correct format           | DD/MM/YYY             |
+| :white_check_mark:| Statement   | prints in correct order                 | reverse chronological |
