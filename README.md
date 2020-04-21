@@ -5,7 +5,10 @@ Bank Application
 This application simulates banking behaviour. It allows you to start a new account, deposit money into your account, and withdraw money from your account. You can also print an account statement to view all of your transactions in a table.
 
 ##### Quick Start: Set up and start using this application:
-1. Fork and clone this repository
+1. Fork and clone this repository and install dependencies
+```
+bundle
+```
 2. Open up IRB in your terminal
 ```
 irb -r ./lib/account.rb
