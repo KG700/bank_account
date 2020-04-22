@@ -2,7 +2,10 @@ require 'account'
 
 describe Account do
 
-  subject(:account) { described_class.new }
+  let(:transaction) { double :transaction }
+  let(:transaction_class) { double :transaction_class, new: transaction }
+  subject(:account) { described_class.new(transaction_class) }
+
 
   describe '.initializes' do
     it 'with a balance of zero' do
@@ -23,7 +26,7 @@ describe Account do
     end
     it 'adds a transaction to the transactions array' do
       account.deposit(1000)
-      expect(account.transactions.last).to be_a Transaction
+      expect(account.transactions.last).to be transaction
     end
   end
 
@@ -38,7 +41,7 @@ describe Account do
     end
     it 'adds a transaction to the transactions array' do
       account.withdraw(1000)
-      expect(account.transactions.last).to be_a Transaction
+      expect(account.transactions.last).to be transaction
     end
   end
 
