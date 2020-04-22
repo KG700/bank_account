@@ -27,19 +27,19 @@ class Statement
     transaction.credit? ? transaction.amount : -transaction.amount
   end
 
+  def create_row(transaction, balance)
+    amount_column = transaction.credit? ? 1 : 2
+    row = format(transaction.date), '', '', two_decimals(balance)
+    row[amount_column] = two_decimals(transaction.amount)
+    row.join(' || ').squeeze(' ')
+  end
+  
   def two_decimals(number)
     '%.2f' % number
   end
 
   def format(date)
     date.strftime("%m/%d/%Y")
-  end
-
-  def create_row(transaction, balance)
-    amount_column = transaction.credit? ? 1 : 2
-    row = format(transaction.date), '', '', two_decimals(balance)
-    row[amount_column] = two_decimals(transaction.amount)
-    row.join(' || ').squeeze(' ')
   end
 
 end

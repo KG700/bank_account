@@ -6,9 +6,9 @@ class Account
   attr_reader :balance, :transactions
 
   def initialize(transaction = Transaction, statement = Statement)
-    @transactions = Array.new
     @transaction = transaction
     @statement = statement
+    @transactions = Array.new
   end
 
   def deposit(money)

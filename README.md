@@ -45,11 +45,11 @@ rspec
 
 ### Application Design
 I designed this application to have 3 classes, each with a single responsibility:
-- **Account** is the main class that the user interacts with. It is responsible for creating and storing transactions and calculating the account balance.
-- **Transaction** is responsible for storing the key information about each transaction. It stores the date of the transaction, the amount, whether the transaction is a credit or debit and the balance at the point of the transaction.
-- **Statement** is responsible for generating and displaying all the transaction details in a format for the user to digest.
+- **Account** is the main class that the user interacts with. It is responsible for creating and storing transactions.
+- **Transaction** is responsible for storing the key information about each transaction. It stores the date of the transaction, the amount and whether the transaction is a credit or debit.
+- **Statement** is responsible for generating and displaying all the transaction details, including a running balance, in a format the user can easily digest.
 
-![Bank diagram](/images/bank_diagram.png?)
+![Bank diagram](/images/Application_diagram.png?)
 
 ### Testing
 The application was developed using TDD, resulting in an application with 100% test coverage according to SimpleCov. The Input Output table below was used to plan out each step of the TDD process.
