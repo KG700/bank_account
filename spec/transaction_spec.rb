@@ -18,10 +18,6 @@ describe Transaction do
       expect(transaction.date).to eq '10-01-2020'
     end
 
-    # it 'balance is 1000' do
-    #   expect(transaction.balance).to eq 1000
-    # end
-
     it '.credit? returns true' do
       expect(transaction.credit?).to be true
     end
