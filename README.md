@@ -38,7 +38,7 @@ date || credit || debit || balance
 20/04/2020 || 2000.00 || || 3000.00
 ```
 
-To run the unit tests, just type into your terminal:
+To run the unit and feature tests, just type into your terminal:
 ```
 rspec
 ```
