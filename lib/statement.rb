@@ -11,7 +11,7 @@ class Statement
   def generate(transactions)
     balance = 0
     transactions.map! do |transaction|
-      balance += transaction.credit? ? transaction.amount : -transaction.amount
+      balance += update_balance(transaction)
       create_row(transaction, balance)
     end.reverse
   end
@@ -22,6 +22,10 @@ class Statement
   end
 
   private
+
+  def update_balance(transaction)
+    transaction.credit? ? transaction.amount : -transaction.amount
+  end
 
   def two_decimals(number)
     '%.2f' % number
