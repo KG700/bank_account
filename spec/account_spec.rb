@@ -40,6 +40,7 @@ describe Account do
 
     it 'calls the print method in the statement class' do
       account.instance_variable_set(:@transactions, [transaction])
+      # allow(transaction).to receive(:credit?)
 
       expect(statement).to receive(:print)
       account.print_statement

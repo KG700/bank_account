@@ -10,7 +10,7 @@ class Statement
 
   def generate(transactions)
     balance = 0
-    transactions.map! do |transaction|
+    transactions.map do |transaction|
       balance += update_balance(transaction)
       create_row(transaction, balance)
     end.reverse

@@ -6,7 +6,6 @@ class Transaction
     @amount = amount
     @type = type
     @date = date
-    # @balance = balance
   end
 
   def credit?
