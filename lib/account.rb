@@ -5,9 +5,11 @@ class Account
 
   attr_reader :balance, :transactions
 
-  def initialize
+  def initialize(transaction = Transaction, statement = Statement)
     @balance = 0
     @transactions = Array.new
+    @transaction = transaction
+    @statement = statement
   end
 
   def deposit(money)
@@ -22,8 +24,8 @@ class Account
 
   def print_statement
     raise "You have no transactions. Statement cannot be generated" if @transactions.empty?
-    
-    Statement.new(@transactions).print
+
+    @statement.new(@transactions).print
   end
 
   private
@@ -33,7 +35,7 @@ class Account
   end
 
   def new_transaction money, type
-    @transactions.push(Transaction.new(money, type, Time.now, @balance))
+    @transactions.push(@transaction.new(money, type, Time.now, @balance))
   end
 
 end
