@@ -54,22 +54,26 @@ I designed this application to have 3 classes, each with a single responsibility
 ### Testing
 The application was developed using TDD, resulting in an application with 100% test coverage according to SimpleCov. The Input Output table below was used to plan out each step of the TDD process.
 
-| Done              | Class       | Input                                   | Output                |
-| :---:             | ---         | ---                                     | :---:                 |
-| :white_check_mark:| Account     | .initializes @balance                   | 0                     |
-| :white_check_mark:| Account     |  .deposit(1000)                         | @balance == 1000      |
-| :white_check_mark:| Account     |  @balance == 1000 : .deposit(2000)      | @balance == 3000      |
-| :white_check_mark:| Account     |  @balance == 3000 : .withdraw(500)      | @balance == 2500      |
-| :white_check_mark:| Account     |  .initializes @transactions             | []                    |
-| :white_check_mark:| Account     |  .deposit(100)                          |[Transaction.new]      |
-| :white_check_mark:| Account     |  .withdraw(100)                         |[Transaction.new]      |
-| :white_check_mark:| Account     |  .withdraw(100)                         |[Transaction.new]      |
-| :white_check_mark:| Account     |  .print_statement with transactions     |prints correctly       |
-| :white_check_mark:| Account     |  .print_statement without transactions  |raises error           |
-| :white_check_mark:| Transaction | when @type == 'credit'                  | .credit? == true      |
-| :white_check_mark:| Transaction | when @type == 'debit'                   | .credit? == false     |
-| :white_check_mark:| Statement   | .print prints column headers            | headers printed       |
-| :white_check_mark:| Statement   | .print prints credit transaction        | credit in 2nd column  |
-| :white_check_mark:| Statement   | .print prints debit transaction         | debit in 3rd column   |
-| :white_check_mark:| Statement   | .print date in correct format           | DD/MM/YYY             |
-| :white_check_mark:| Statement   | prints in correct order                 | reverse chronological |
+| Done              | Class       | Input                                       | Output                |
+| :---:             | ---         | ---                                         | :---:                 |
+| :white_check_mark:| Account     | .initializes @balance                       | 0                     |
+| :white_check_mark:| Account     |  .deposit(1000)                             | @balance == 1000      |
+| :white_check_mark:| Account     |  @balance == 1000 : .deposit(2000)          | @balance == 3000      |
+| :white_check_mark:| Account     |  @balance == 3000 : .withdraw(500)          | @balance == 2500      |
+| :white_check_mark:| Account     |  .initializes @transactions                 | []                    |
+| :white_check_mark:| Account     |  .deposit(100)                              |[Transaction.new]      |
+| :white_check_mark:| Account     |  .withdraw(100)                             |[Transaction.new]      |
+| :white_check_mark:| Account     |  .withdraw(100)                             |[Transaction.new]      |
+| :white_check_mark:| Account     |  .print_statement with transactions         |prints correctly       |
+| :white_check_mark:| Account     |  .print_statement without transactions      |raises error           |
+| :white_check_mark:| Transaction | when @type == 'credit'                      | .credit? == true      |
+| :white_check_mark:| Transaction | when @type == 'debit'                       | .credit? == false     |
+| :white_check_mark:| Statement   | .print prints column headers                | headers printed       |
+| :white_check_mark:| Statement   | .print prints credit transaction            | credit in 2nd column  |
+| :white_check_mark:| Statement   | .print prints debit transaction             | debit in 3rd column   |
+| :white_check_mark:| Statement   | .print date in correct format               | DD/MM/YYY             |
+| :white_check_mark:| Statement   | prints in correct order                     | reverse chronological |
+| :white_check_mark:| feature     | account.deposit(1000)                       | no error raised       |
+| :white_check_mark:| feature     | account.withdraw(300)                       | no error raised       |
+| :white_check_mark:| feature     | (with transactions) account.print_statement | prints to stdout      |
+| :white_check_mark:| feature     | (no transactions) account.print_statement   | error raised          |
