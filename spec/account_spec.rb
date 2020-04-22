@@ -4,7 +4,9 @@ describe Account do
 
   let(:transaction) { double :transaction }
   let(:transaction_class) { double :transaction_class, new: transaction }
-  subject(:account) { described_class.new(transaction_class) }
+  let(:statement) { double :statement }
+  let(:statement_class) { double :statement_class, new: statement }
+  subject(:account) { described_class.new(transaction_class, statement_class) }
 
 
   describe '.initializes' do
@@ -52,9 +54,8 @@ describe Account do
 
     it 'calls the print method in the statement class' do
       account.instance_variable_set(:@transactions, [transaction])
-      allow(transaction).to receive(:credit?) { true }
-
-      expect_any_instance_of(Statement).to receive(:print)
+  
+      expect(statement).to receive(:print)
       account.print_statement
     end
 
