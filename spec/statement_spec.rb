@@ -29,7 +29,7 @@ describe Statement do
       subject(:statement) { described_class.new transactions }
 
       it 'displays in correct format' do
-        expect(statement.rows[0]).to eq "#{today.strftime("%m/%d/%Y")} || || 300.00 || 700.00"
+        expect(statement.rows[0]).to eq "#{today.strftime("%m/%d/%Y")} || || 300.00 || -300.00"
       end
     end
 

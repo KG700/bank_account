@@ -9,7 +9,11 @@ class Statement
   end
 
   def generate(transactions)
-    transactions.map! { |transaction| create_row(transaction) }.reverse
+    balance = 0
+    transactions.map! do |transaction|
+      balance += transaction.credit? ? transaction.amount : -transaction.amount
+      create_row(transaction, balance)
+    end.reverse
   end
 
   def print
@@ -27,9 +31,9 @@ class Statement
     date.strftime("%m/%d/%Y")
   end
 
-  def create_row(transaction)
+  def create_row(transaction, balance)
     amount_column = transaction.credit? ? 1 : 2
-    row = format(transaction.date), '', '', two_decimals(transaction.balance)
+    row = format(transaction.date), '', '', two_decimals(balance)
     row[amount_column] = two_decimals(transaction.amount)
     row.join(' || ').squeeze(' ')
   end
