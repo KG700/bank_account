@@ -13,12 +13,10 @@ class Account
   end
 
   def deposit(money)
-    # update_balance money
     new_transaction money, 'credit'
   end
 
   def withdraw(money)
-    # update_balance(-money)
     new_transaction money, 'debit'
   end
 
@@ -29,10 +27,6 @@ class Account
   end
 
   private
-
-  # def update_balance money
-  #   @balance += money
-  # end
 
   def new_transaction money, type
     @transactions.push(@transaction.new(money, type, Time.now))
